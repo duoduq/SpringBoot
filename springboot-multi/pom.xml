@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- 基本信息 -->
+	<description>SpringBoot 多模块构建示例</description>
+	<modelVersion>4.0.0</modelVersion>
+	<name>spring-boot-multi</name>
+	<packaging>pom</packaging>
+
+	<!-- 项目说明：这里作为聚合工程的父工程 -->
+	<groupId>com.duoduq</groupId>
+	<artifactId>springboot-multi</artifactId>
+	<version>1.0.0.RELEASE</version>
+
+	<!-- 继承说明：这里继承SpringBoot提供的父工程 -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.7.RELEASE</version>
+		<relativePath/>
+	</parent>
+
+	<!-- 模块说明：这里声明多个子模块 -->
+	<modules>
+		<module>duoduq-web</module>
+		<module>duoduq-service</module>
+		<module>duoduq-repo</module>
+		<module>duoduq-entity</module>
+	</modules>
+
+	<!-- 版本说明：这里统一管理依赖的版本号 -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.duoduq</groupId>
+				<artifactId>duoduq-web</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.duoduq</groupId>
+				<artifactId>duoduq-service</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.duoduq</groupId>
+				<artifactId>duoduq-repo</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.duoduq</groupId>
+				<artifactId>duoduq-entity</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
